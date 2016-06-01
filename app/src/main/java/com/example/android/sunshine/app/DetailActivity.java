@@ -16,6 +16,7 @@
 
 package com.example.android.sunshine.app;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.ActionBarActivity;
@@ -24,9 +25,11 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class DetailActivity extends ActionBarActivity {
-
+    RelativeLayout listLayout;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -74,6 +77,17 @@ public class DetailActivity extends ActionBarActivity {
                                  Bundle savedInstanceState) {
 
             View rootView = inflater.inflate(R.layout.fragment_detail, container, false);
+            //for detail
+            Intent detailIntent = getActivity().getIntent();
+            if(detailIntent != null && detailIntent.hasExtra(detailIntent.EXTRA_TEXT)) {
+                String details = detailIntent.getStringExtra(detailIntent.EXTRA_TEXT);
+
+
+                TextView textView = (TextView) rootView.findViewById(R.id.list_detail);
+
+                textView.setText(details);
+            }
+            //for detail
             return rootView;
         }
     }

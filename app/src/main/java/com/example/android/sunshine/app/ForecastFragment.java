@@ -15,6 +15,7 @@
  */
 package com.example.android.sunshine.app;
 
+import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -119,7 +120,13 @@ public class ForecastFragment extends Fragment {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 String forecast = mForecastAdapter.getItem(position);
-                Toast.makeText(getActivity(), forecast, Toast.LENGTH_SHORT).show();
+                Intent detailActivityIntent = new Intent(getActivity(), DetailActivity.class);
+                detailActivityIntent.putExtra(detailActivityIntent.EXTRA_TEXT,forecast);
+
+                //downloadIntent.setData(Uri.parse(fileUrl));
+                startActivity(detailActivityIntent);
+                //Toast.makeText(getActivity(), forecast, Toast.LENGTH_SHORT).show();
+
             }
         });
 
