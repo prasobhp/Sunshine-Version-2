@@ -18,5 +18,11 @@
     <string name="action_refresh" translatable="false">Refresh</string>
     <string name="hello_world">Hello world!</string>
     <string name="title_activity_detail">DetailActivity</string>
-
+    <string name="settings_activity_detail">SettingsActivity</string>
+    <string name="pref_location_label">Location</string>
+    <string name="pref_location_key" translatable="false">location</string>
+    <string name="pref_location_defaultvalue" translatable="false">689507</string>
+    <string name="pref_temp_label" translatable="false">Temperature Unit</string>
+    <string name="pref_temp_key" translatable="false">tempUnit</string>
+    <string name="pref_temp_default_value" translatable="false">metric</string>
 </resources>
